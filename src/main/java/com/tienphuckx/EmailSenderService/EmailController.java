@@ -57,6 +57,11 @@ public class EmailController {
             helper.addAttachment("introduce.txt",
                     new File("C:\\Users\\PC\\Desktop\\avatas\\introduce.txt"));
 
+            // [LINUX]
+            /* helper.addInline("phuc_logo.jpg",
+                    new File("/home/tienphuckx/dev/dev-resources/phuc_logo.jpg"));
+             */
+
             mailSender.send(message);
             return "Email sent successfully";
         }catch (Exception e){
@@ -81,9 +86,15 @@ public class EmailController {
                 );
             }
 
-            // add inline file
+            /*
+            [WINDOW] add inline file
             helper.addInline("phuc_logo.jpg",
-                    new File("C:\\Users\\PC\\Desktop\\avatas\\phuc_logo.jpg"));
+                    new File("C:\\Users\\PC\\Desktop\\avatas\\phuc_logo.jpg")); */
+
+            // [LINUX] add inline file
+            helper.addInline("phuc_logo.jpg",
+                    new File("/home/tienphuckx/dev/dev-resources/phuc_logo.jpg"));
+
 
             mailSender.send(message);
             return "Email sent successfully";
